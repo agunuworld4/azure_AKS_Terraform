@@ -4,27 +4,27 @@ variable "client_secret" {}
 
 variable "node_count" {
   description = "number of nodes to deploy"
-  default     = 2
+  default     = 3
 }
 
 variable "dns_prefix" {
   description = "DNS Suffix"
-  default     = "runitoncloud"
+  default     = "myakscloud"
 }
 
 variable cluster_name {
   description = "AKS cluster name"
-  default     = "runItOnCloud"
+  default     = "MyAKS"
 }
 
 variable resource_group_name {
   description = "name of the resource group to deploy AKS cluster in"
-  default     = "runitoncloud"
+  default     = "AKSRG"
 }
 
 variable location {
   description = "azure location to deploy resources"
-  default     = "westeurope"
+  default     = "centralus"
 }
 
 variable log_analytics_workspace_name {
@@ -33,22 +33,22 @@ variable log_analytics_workspace_name {
 
 # refer https://azure.microsoft.com/global-infrastructure/services/?products=monitor for log analytics available regions
 variable log_analytics_workspace_location {
-  default = "eastus"
+  default = "centralus"
 }
 
 # refer https://azure.microsoft.com/pricing/details/monitor/ for log analytics pricing
 variable log_analytics_workspace_sku {
-  default = "PerGB2018"
+  default = "PerGB2020"
 }
 
 variable subnet_name {
   description = "subnet id where the nodes will be deployed"
-  default     = "runitoncloud-subnet"
+  default     = "myaks-subnet"
 }
 
 variable vnet_name {
   description = "vnet id where the nodes will be deployed"
-  default     = "runitoncloud-vnet"
+  default     = "myaks-vnet"
 }
 
 variable subnet_cidr {
@@ -81,11 +81,11 @@ variable "address_space" {
   default     = "10.2.0.0/16"
 }
 variable "min_count" {
-  default     = 1
+  default     = 3
   description = "Minimum Node Count"
 }
 variable "max_count" {
-  default     = 2
+  default     = 5
   description = "Maximum Node Count"
 }
 

@@ -20,7 +20,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
 
     tags = merge(
     {
-       "environment" = "runitoncloud"
+       "environment" = "myakscloud"
     },
     {
       "aadssh" = "True"
@@ -44,11 +44,11 @@ resource "azurerm_kubernetes_cluster" "cluster" {
 
 
  tags = {
-        Environment = "Development"
+        Environment = "Production"
     }
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 
